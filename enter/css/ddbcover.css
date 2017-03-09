@@ -1,0 +1,354 @@
+﻿@charset "utf-8";
+/********author:Tongyan.Guo**************/
+html{
+    min-width:1002px;
+}
+body{
+    margin:0;
+    padding:0;
+    font-size:12px;
+    font-family:"Microsoft YaHei", "宋体",Arial, Helvetica, sans-serif;
+    background-color:#060606;
+}
+div,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,textarea{
+    margin:0;
+    padding:0;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size:100%;
+    font-weight:normal;
+}
+area{
+    outline:none;
+}
+img{
+    border:0;
+}
+ol,ul{
+    list-style:none;
+}
+a{font-family:
+"Microsoft YaHei", "宋体",Arial, Helvetica, sans-serif;
+    text-decoration:none;
+    outline:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+.clearfix:after {
+    content:"";
+    display:block;
+    height:0;
+    clear:both;
+}
+.clearfix {
+    zoom:1;
+}
+.bg{
+    background:url(../images/bg.jpg) center top no-repeat #240803;
+}
+.rel1002{
+    position:relative;
+    width:1002px;
+    margin:0 auto;
+    overflow:hidden;
+}
+.img_banner{
+    position:relative;
+    width:1002px;
+    margin:0 auto;
+    overflow:hidden;
+}
+.img_banner img{
+    float:left;
+}
+
+.link{
+    position:absolute;
+    text-indent:-9999px;
+
+}
+.logo{
+    width:255px;
+    height:150px;
+    left:405px;
+    top:60px;
+ }
+.link1,.link2,.link3,.link4,.link5{
+    width:200px;
+    height:86px;
+    top:867px;
+}
+.link1{
+    left:0;
+}
+.link2{
+    left:201px;
+}
+.link3{
+    left:401px;
+}
+.link4{
+    left:601px;
+}
+.link5{
+    left:801px;
+}
+.link1:hover{
+    background:url(../images/links_01.jpg) no-repeat;
+}
+.link2:hover{
+    background:url(../images/links_02.jpg) no-repeat;
+}
+.link3:hover{
+    background:url(../images/links_03.jpg) no-repeat;
+}
+.link4:hover{
+    background:url(../images/links_04.jpg) no-repeat;
+}
+.link5:hover{
+    background:url(../images/links_05.jpg) no-repeat;
+}
+.center_box{
+    position:absolute;
+    width:600px;
+    height:338px;
+    left:200px;
+    top:503px;
+}
+.entersl{
+    width:200px;
+    height:338px;
+    position:absolute;
+    top:503px;
+    left:1px;
+    background:url(../images/nava1.jpg) no-repeat;
+}
+.entersl a{
+    width:200px;
+
+    position:absolute;
+    left:0;
+}
+.entersl a.enter1{
+    height:120px;
+    top:0;
+}
+.entersl a.enter2{
+    height:109px;
+    top:120px;
+}
+.entersl a.enter3{
+    height:109px;
+    top:229px;
+}
+.entersr{
+    width:200px;
+    height:338px;
+    position:absolute;
+    top:503px;
+    right:1px;
+    background:url(../images/nava2.jpg) no-repeat;
+}
+.entersr a{
+    width:200px;
+
+    position:absolute;
+    left:0;
+}
+.entersr a.enter4{
+    height:120px;
+    top:0;
+}
+.entersr a.enter5{
+    height:109px;
+    top:120px;
+}
+.entersr a.enter6{
+    height:109px;
+    top:229px;
+}
+
+.tit{
+    width:1002px;
+    height:400px;
+    left:0;
+    top:100px;
+}
+.entersr {
+    top: 500px;
+    right: 2px;
+}
+.entersl {
+    top: 500px;
+}
+.center_box {
+    top: 500px;
+}
+.hightlan{
+    background: #ccc;
+    opacity: 0.5;
+}
+.boxy-modal-blackout{background:rgba(6,17,2,0.7) !important;}
+
+
+
+#PrizePoolText{
+    font:bold 40px Arial, Helvetica, sans-serif;
+    color:#ece6e0;
+    position:absolute;
+    left:506px;
+    top:405px;
+}
+.rel1100 {width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+.bottom{
+    height: 160px;
+    background: #000;
+}
+.banxin1{
+    width: 1200px;
+    margin: 0 auto;
+    height: 160px;
+}
+.img1{
+    margin: 40px 0 0 175px;
+    float: left;
+}
+.img2{
+    margin: 40px 0 0 40px;
+    float: left;
+}
+.botm1{
+    width: 631px;
+    height: 32px;
+    margin: 40px 0 0 20px;
+    float: left;
+}
+.botm1 p{
+    font-size: 12px;
+    color:#959595;
+}
+.botm2{
+    width: 615px;
+    height: 35px;
+    margin: 12px 0 0 40px;
+    float: left;
+}
+.botm2 p{
+    font-size: 12px;
+    color:#333333;
+}
+.lanhight{
+    background-color: #fff;
+}
+.wrap {
+    width: 100%;
+    height: 338px;
+    -webkit-perspective: 800px;
+    -webkit-perspective-origin: 50% 110px;
+    /*   -webkit-transition: -webkit-transform 2s;*/
+    -webkit-transform-style: preserve-3d;
+}
+
+.box {
+    position: relative;
+    top: 60px;
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    cursor:pointer;
+
+    -webkit-transform-style: preserve-3d;
+    -webkit-animation: spin 8s infinite linear;
+
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotateY(0deg); }
+    to   { -webkit-transform: rotateY(-360deg); }
+}
+.div {
+    position: absolute;
+    left:0;
+    top:0;
+    height: 200px;
+    width: 200px;
+    border: 1px solid white;
+   /* -webkit-border-radius: 12px;*/
+    -webkit-box-sizing: border-box;
+    text-align: center;
+    font-size: 124pt;
+    color: red;
+    background-color: rgba(255, 255, 255, 0.6);
+    -webkit-transition: -webkit-transform 2s, opacity 2s;
+    -webkit-backface-visibility: visible;
+}
+.yi {
+    opacity: 0.5;
+    -webkit-transform: scale3d(1.2, 1.2, 1.2) rotateX(90deg) translateZ(100px);
+}
+.qi {
+    opacity: 0.5;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8) rotateX(90deg) translateZ(100px);
+}
+
+.er {
+    opacity: 0.5;
+    -webkit-transform: scale3d(1.2, 1.2, 1.2) rotateX(0deg) translateZ(100px);
+}
+.ba {
+    opacity: 0.5;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8) rotateX(0deg) translateZ(100px);
+}
+.san {
+    opacity: 0.5;
+    -webkit-transform: scale3d(1.2, 1.2, 1.2) rotateX(-90deg) translateZ(100px);
+}
+.jiu {
+    opacity: 0.5;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8) rotateX(-90deg) translateZ(100px);
+}
+.si {
+    opacity: 0.5;
+    -webkit-transform: scale3d(1.2, 1.2, 1.2) rotateY(180deg) translateZ(100px);
+}
+.shi {
+    opacity: 0.5;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8) rotateY(180deg) translateZ(100px);
+}
+
+.wu {
+    opacity: 0.5;
+    -webkit-transform: scale3d(1.2, 1.2, 1.2) rotateY(90deg) translateZ(100px);
+}
+.shiyi {
+    opacity: 0.5;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8) rotateY(90deg) translateZ(100px);
+}
+
+.liu {
+    opacity: 0.5;
+    -webkit-transform: scale3d(1.2, 1.2, 1.2) rotateY(270deg) translateZ(100px);
+}
+.shier {
+    opacity: 0.5;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8) rotateY(270deg) translateZ(100px);
+}
+#canv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    cursor: pointer;
+
+}
+.wrap{
+    background:url(../images/centerbg.jpg);
+}
+
+.wrap img{
+    width: 200px;
+    height: 200px;
+}

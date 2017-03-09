@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="Design:; Web Layout:Tang.Binbin;" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="keywords" content="dota2,dota,官网,英雄,对战,续作,经典,moba" />
+<link rel="Shortcut Icon" href="http://www.dota2.com.cn/favicon.ico" />
+<link rel="bookmark" href="http://www.dota2.com.cn/favicon.ico" />
+<meta name="description" content="DotA2是MOBA游戏始祖dota的续作， 以独特的系统设计，丰富的物品道具，多样的技能组合，精彩刺激的团战，创造了竞技游戏的一个新的时代！" />
+<title>404 您找的页面被劫持了！ - 《DOTA2》官方网站</title>
+<link href="/style/main1307.css" rel="stylesheet" type="text/css" />
+<link href="style/master.css" rel="stylesheet" type="text/css" />
+<script type="text/ecmascript" src="/js/jquery-1.9.1.min.js"></script>
+<script type="text/ecmascript" src="/js/main1308.js"></script>
+</head>
+
+<body>
+<!--#include virtual="/include/top_nav1308.htm"-->
+
+<div class="relative">
+	<div class="iconTooltip"></div>
+</div>
+<div id="wrap">
+	<div id="header">
+		<div class="link1"><a href="http://www.dota2.com.cn/hero/riki/"></a></div>
+		<div class="link2"><a href="http://www.dota2.com.cn/hero/phantom_lancer/"></a></div>
+		<img src="images/error_01.jpg" width="1002" alt="" />
+		<img src="images/error_02.jpg" width="1002" alt="" />
+		<img src="images/error_03.jpg" width="1002" alt="" usemap="#map" />
+		<img src="images/error_04.jpg" width="1002" alt="" />
+		<img src="images/error_05.jpg" width="1002" alt="" />
+		<img src="images/error_06.jpg" width="1002" alt="" usemap="#map2"/>
+		<div class="clr"></div>
+	</div>
+</div>
+
+<iframe src="http://www.dota2.com.cn/iframe/footer130118.htm" allowtransparency="true" scrolling="no" frameborder="0" width="100%" height="90"></iframe>
+
+
+<map name="map" id="map">
+	<area shape="rect" coords="634,0,752,48" href="http://www.dota2.com.cn/main.htm" alt="" />
+</map>
+<map name="map2" id="map2">
+	<area shape="rect" coords="0,8,122,51" href="http://www.dota2.com.cn/download/" alt="" />
+	<area shape="rect" coords="862,16,1002,58" href="http://passport.wanmei.com/dota/phonereg.jsp" alt="" />
+</map>
+<script type="text/javascript" src="http://www.wanmei.com/public/js/wm.js" top="false" bottom="false"></script>
+<div class="wm-public none" analytics="{single:'dota2201308201307t2613'}"></div>
+</body>
+</html>	

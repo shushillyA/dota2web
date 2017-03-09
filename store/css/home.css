@@ -1,0 +1,380 @@
+﻿@charset "utf-8";
+
+/*清零*/
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, dl, dt, dd, input
+{ margin: 0; padding: 0; border: 0; }
+body { font-size: 14px; font-family: Microsoft YaHei; }
+ul, ol { list-style-type: none; }
+select, input, img { vertical-align: middle; outline: none;border:0 }
+a { text-decoration: none; outline: none; }
+a:hover {  text-decoration: none; }
+a:focus{ outline: none;}
+.ovf{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-ms-text-overflow: ellipsis;-o-text-overflow: ellipsis;-moz-binding: url("ellipsis.xml#ellipsis");}
+.cl:after,div:after { content: ""; display: block; clear: both; }
+.cl,div { zoom: 1; }
+.fl { float: left; }
+.fr { float: right;}
+
+
+body{ min-width: 1326px; background: url(../images/body.jpg) no-repeat 50% -8px;}
+
+
+
+/*版心部分*/
+.ck_wrap{ width: 1324px; margin: 0 auto; position: relative}
+
+/*头部导航和侧边栏导航*/
+.cktop_nav{ background-color: black;cursor: pointer;
+    background: url(../images/top_nav.png) repeat-x;
+    height: 72px; position: relative; overflow: hidden}
+
+.lianjie{
+    position: absolute;
+    width: 50px;
+    height: 72px;
+    top: 0;
+    left: 400px;
+}
+.ckfloat_nav{ width: 176px; height: 412px;
+    background: url(../images/float_bg.png) no-repeat;
+    display: block; position: fixed; z-index: 9999;
+    left:50px;  top:100px; text-align: center; display: block;}
+.ckfloat_nav a{display: block;}
+.ckfloat_nav .title{ margin-top: 5px; margin-bottom: 2px;}
+.ckfloat_nav .fnav{ margin-bottom: 2px;}
+/*头部导航和侧边栏导航*/
+
+/*banner部分-神秘商店*/
+.ck_banner{ height: 708px; background: url(../images/banner.jpg) no-repeat 50% 0;
+    text-align: center;cursor: pointer;}
+.ck_banner .btl1{ margin-top: 400px; margin-left: 0px;}
+/*banner部分-神秘商店*/
+
+/*第一部分*/
+.ck_link{ width: 423px; height: 361px;display: block;
+    margin-right: 16px; background: url(../images/alink.png) no-repeat;
+    text-align: center; margin-top: 64px; }
+.ck_link img{ margin-top: 6px;}
+#ck_link1{
+    /*visibility: hidden;*/
+    position: absolute;
+    top:50px;
+    left: 15px;
+}#ck_link2{
+     /*visibility: hidden;*/
+    position: absolute;
+    top:50px;
+    left: 450px;
+}#ck_link3{
+      /*visibility: hidden;*/
+    position: absolute;
+    top:50px;
+    left: 880px;
+}
+.ck_suit{ background: url(../images/suitbg.jpg) no-repeat;
+    width: 1326px; height: 0;}
+/*第二部分*/
+.ck_title { height: 356px; background: url(../images/titlebg.jpg) no-repeat; text-align: center; position: relative;}
+.ck_title img{ margin: 0 auto;}
+
+/*第三部分*/
+
+.ck_newp{ height: 621px; background: url(../images/newp.jpg) no-repeat 50% 0; position: relative;}
+.ck_newp .imgicon{ position: absolute; left:512px; top:-46px;}
+.np_top{height: 350px;
+    position: relative;}
+.np_top a{ display:inline-block; float: left; margin-top: 30px;}
+/*.np_top img{ float: left; }*/
+#np1{
+    position: absolute;
+    left: 261px;
+    top: 20px;
+}
+#np2{
+     position: absolute;
+     left: 504px;
+     top: 20px;
+ }
+#np3{
+      position: absolute;
+      left: 701px;
+      top: 20px;
+  }
+#np4{
+       position: absolute;
+       left: 915px;
+       top: 20px;
+   }
+#np5{
+        position: absolute;
+        left: 1149px;
+        top: 20px;
+}
+
+.newp_item{ padding-top: 164px; margin-right: -20px; margin-left: 10px;}
+.np_bot .npb_title{ display: block; float: left; margin-right: 500px;
+    margin-left: 20px; margin-top: -20px; }
+.np_bot a{ display: block; float: left; margin-left: 40px; margin-right:-28px; }
+.np_bot a:hover{
+    box-shadow:5px 5px 5px 5px #000;
+}
+
+
+
+
+
+/*.mb2{ height: 148px; background: url(../images/mb2_bg.jpg) no-repeat 50% 0;}*/
+/*wdlcss开始*/
+
+.mb2 {
+    height: 148px;
+    background: url(../images/mb2_bg.jpg) no-repeat 50% 0;
+}
+
+/*第一部分*/
+.wdl_top {
+    position: relative;
+    background: url(../images/price_bg.jpg) no-repeat 50% 0;
+    height: 621px;
+    width: 100%;
+}
+
+.wdl_top .imgicon {
+    position: absolute;
+    left: 512px;
+    top: -46px;
+    z-index: 2;
+}
+
+.wdl_top .price-left {
+    width: 580px;
+    height: 587px;
+}
+
+.wdl_top .inventory {
+    position: absolute;
+    left: 528px;
+    top: 7px;
+}
+
+.price-left .leftbox {
+    width: 300px;
+    height: 221px;
+    margin: 100px 0 0 170px;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 5px 4px 107px 1px rgba(16, 12, 84, 0.45);
+    border-radius: 20px 20px 0 0
+}
+
+.price-left ul {
+    width: 1946px;
+    position: absolute;
+}
+
+.price-left .leftbox li {
+    float: left;
+}
+.price-left .win7 {
+    position: absolute;
+    top:350px;
+    left: 100px;
+}
+
+.price-left .win8 {
+    position: absolute;
+    top:370px;
+    left: 420px;
+}
+.price-right {
+    display: block;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 150px 0 0 150px;
+    position: absolute;
+    left:800px;
+    top:150px;
+    z-index: 2;
+
+}
+
+.price-right a {
+    display: block;
+}
+
+.price-right a img {
+    position: absolute;
+}
+
+.mb3 {
+    height: 167px;
+    background: url(../images/mb3.jpg) no-repeat 50% 0;
+}
+
+/*第二部分*/
+.wdl_center {
+    position: relative;
+    height: 621px;
+    background: url(../images/winter_bg.jpg) no-repeat 50% 0;
+}
+
+.wdl_center .imgicon {
+    position: absolute;
+    left: 512px;
+    top: -46px;
+}
+/*中间部分左侧*/
+.wdl_center a {
+    float: left;
+    display: block;
+}
+.wdl_center .win1 {
+    position: absolute;
+    left: 80px;
+    top: 50px;
+}
+
+.wdl_center .win2 {
+    position: absolute;
+    left: 350px;
+    top: 150px;
+}
+
+.wdl_center .win3 {
+    position: absolute;
+    left: 550px;
+    top: 250px;
+}
+
+.wdl_center .win4 {
+    position: absolute;
+    left: 800px;
+    top: 100px;
+}
+
+.wdl_center .win5{
+    position: absolute;
+    left: 1010px;
+    top: 130px;
+}
+.wdl_center p {
+    font: italic bold 60px "楷体";
+    color:rgba(76,213,255,0.3);
+    position: absolute;
+    top:490px;
+    left: 100px;
+}
+
+
+.mb4 {
+    height: 175px;
+    background: url(../images/mb4.jpg) no-repeat 50% 0;
+}
+
+/*/!*第三部分*!/ 底部开始*/
+.wdl_bottom {
+    position: relative;
+    height: 786px;
+    background: url(../images/dota_bg.jpg) no-repeat 50% 0;
+}
+
+.wdl_bottom .imgicon {
+    position: absolute;
+    left: 512px;
+    top: -46px;
+}
+
+.wdl_bottom a {
+    display: block;
+    float: left;
+}
+.wdl_bottom .bottom_left{
+    width: 650px;
+    height: 700px;
+    position: relative;
+    top:50px;
+    left: 50px;
+    overflow: hidden;
+}
+.bottom_left .da1,.da2,.da3,.da4,.da5{
+    position: absolute;
+
+}
+.bottom_left .da1 {
+    left: 20px;
+    z-index: 1;
+}
+.bottom_left .da2{
+    left: 200px;
+    z-index: 1;
+}
+.bottom_left .da3{
+    top:250px;
+    left: 300px;
+    opacity:0.7;
+
+}
+.bottom_left .da4{
+    top:150px;
+    left: 20px;
+    opacity:0.7;
+}
+.wdl_bottom .bottom_right{
+    width: 650px;
+    height: 700px;
+    position: relative;
+    top:50px;
+    right: 0px;
+}
+.wdl_bottom .bottom_right .rightpicT {
+    position: absolute;
+    top: 80px;
+    left: 120px;
+}
+#lightTop {
+    position: absolute;
+    border-top: 2px solid blueviolet;
+
+}
+#lightRight {
+    position: absolute;
+    border-right: 2px solid blueviolet;
+
+    right: 0;
+}
+#lightBottom {
+    position: absolute;
+    bottom:0;
+    border-top: 2px solid purple;
+
+}
+#lightLeft {
+    position: absolute;
+    border-right: 2px solid blueviolet;
+
+    left: 0;
+}
+
+.wdl_bottom .bottom_right .rightpicB {
+    position: absolute;
+    top: 380px;
+    left: 0px;
+}
+.rightpicB ul{
+    position: relative;
+}
+.rightpicB ul .active{
+    border: 1px solid rgba(80,66,109,0.7);
+}
+.rightpicB li{
+    float: left;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+/*底部结束*/
+.mb5 {
+    height: 50px;
+    position: relative;
+    background: url(../images/mb5.jpg) no-repeat 50% 0;
+}

@@ -1,0 +1,648 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- SFC优化 -->
+    <link rel="shortcut icon" href="steam.ico" />
+    <link href="css/web1504.css" rel="stylesheet" type="text/css" />
+    <!-- 引用JQ-->
+    <script type="text/javascript" src="js/jq_171.js"></script>
+    <script type="text/javascript" src="js/move.js"></script>
+    <!-- 底部动画-->
+    <script>
+        window.onload = function() {
+
+            var json = {
+                title: [
+                    '<img src="image/1.png">',
+                    '<img src="image/2.png">',
+                    '<img src="image/3.png">',
+                    '<img src="image/4.png">',
+                    '<img src="image/5.png">',
+                    '<img src="image/6.png">',
+                    '<img src="image/7.png">',
+                    '<img src="image/8.png">',
+                    '<img src="image/9.png">',
+                    '<img src="image/10.png">',
+                    '<img src="image/11.png">',
+                    '<img src="image/12.png">',
+                    '<img src="image/13.png">',
+                    '<img src="image/14.png">',
+                    '<img src="image/15.png">',
+                    '<img src="image/16.png">',
+                    '<img src="image/17.png">',
+                    '<img src="image/18.png">',
+                    '<img src="image/19.png">',
+                    '<img src="image/20.png">',
+                    '<img src="image/21.png">',
+                    '<img src="image/22.png">',
+                    '<img src="image/23.png">',
+                    '<img src="image/24.png">',
+                    '<img src="image/25.png">',
+                    '<img src="image/26.png">',
+                    '<img src="image/27.png">',
+                    '<img src="image/28.png">',
+                    '<img src="image/29.png">',
+                    '<img src="image/30.png">',
+                    '<img src="image/31.png">',
+                    '<img src="image/32.png">',
+                    '<img src="image/33.png">',
+                    '<img src="image/34.png">'
+                ]
+            };
+            var arr = [];
+            var iNow = 9;
+
+            page({
+
+                id: 'div1',
+                nowNum: 1,
+                allNum: Math.ceil(json.title.length / 10),
+                callBack: function(now, all) {
+
+                    var num = now * 10 < json.title.length ? 10 : json.title.length - (now - 1) * 10;
+                    var oUl = document.getElementById('ul1');
+                    var aLi = oUl.getElementsByTagName('li');
+
+                    if (oUl.innerHTML == '') {
+                        for (var i = 0; i < num; i++) {
+                            var oLi = document.createElement('li');
+                            oLi.innerHTML = json.title[(now - 1) * 10 + i];
+                            oUl.appendChild(oLi);
+                        }
+
+                        for (var i = 0; i < aLi.length; i++) {
+                            arr.push([aLi[i].offsetLeft, aLi[i].offsetTop]);
+                        }
+
+                        for (var i = 0; i < aLi.length; i++) {
+                            aLi[i].style.position = 'absolute';
+                            aLi[i].style.left = arr[i][0] + 'px';
+                            aLi[i].style.top = arr[i][1] + 'px';
+                            aLi[i].style.margin = 0;
+                        }
+
+                    } else {
+
+                        var timer = setInterval(function() {
+
+                            startMove(aLi[iNow], {
+                                left: 200,
+                                top: 250,
+                                opacity: 0
+                            });
+
+                            if (iNow == 0) {
+                                clearInterval(timer);
+
+                                iNow = num - 1;
+
+                                for (var i = 0; i < num; i++) {
+                                    aLi[i].innerHTML = json.title[(now - 1) * 10 + i];
+                                }
+
+                                var timer2 = setInterval(function() {
+
+                                    startMove(aLi[iNow], {
+                                        left: arr[iNow][0],
+                                        top: arr[iNow][1],
+                                        opacity: 100
+                                    });
+
+                                    if (iNow == 0) {
+                                        clearInterval(timer2);
+                                        iNow = num - 1;
+                                    } else {
+                                        iNow--;
+                                    }
+
+                                }, 100);
+
+                            } else {
+                                iNow--;
+                            }
+
+                        }, 100);
+
+                    }
+
+                }
+
+            });
+
+        };
+
+        function page(opt) {
+
+            if (!opt.id) {
+                return false
+            };
+
+            var obj = document.getElementById(opt.id);
+
+            var nowNum = opt.nowNum || 1;
+            var allNum = opt.allNum || 5;
+            var callBack = opt.callBack || function() {};
+
+            if (nowNum >= 4 && allNum >= 6) {
+
+                var oA = document.createElement('a');
+                oA.href = '#1';
+                oA.innerHTML = '首页';
+                obj.appendChild(oA);
+
+            }
+
+            if (nowNum >= 2) {
+                var oA = document.createElement('a');
+                oA.href = '#' + (nowNum - 1);
+                oA.innerHTML = '上一页';
+                obj.appendChild(oA);
+            }
+
+            if (allNum <= 5) {
+                for (var i = 1; i <= allNum; i++) {
+                    var oA = document.createElement('a');
+                    oA.href = '#' + i;
+                    if (nowNum == i) {
+                        oA.innerHTML = i;
+                    } else {
+                        oA.innerHTML = '[' + i + ']';
+                    }
+                    obj.appendChild(oA);
+                }
+            } else {
+
+                for (var i = 1; i <= 5; i++) {
+                    var oA = document.createElement('a');
+
+
+                    if (nowNum == 1 || nowNum == 2) {
+
+                        oA.href = '#' + i;
+                        if (nowNum == i) {
+                            oA.innerHTML = i;
+                        } else {
+                            oA.innerHTML = '[' + i + ']';
+                        }
+
+                    } else if ((allNum - nowNum) == 0 || (allNum - nowNum) == 1) {
+
+                        oA.href = '#' + (allNum - 5 + i);
+
+                        if ((allNum - nowNum) == 0 && i == 5) {
+                            oA.innerHTML = (allNum - 5 + i);
+                        } else if ((allNum - nowNum) == 1 && i == 4) {
+                            oA.innerHTML = (allNum - 5 + i);
+                        } else {
+                            oA.innerHTML = '[' + (allNum - 5 + i) + ']';
+                        }
+
+                    } else {
+                        oA.href = '#' + (nowNum - 3 + i);
+
+                        if (i == 3) {
+                            oA.innerHTML = (nowNum - 3 + i);
+                        } else {
+                            oA.innerHTML = '[' + (nowNum - 3 + i) + ']';
+                        }
+                    }
+                    obj.appendChild(oA);
+
+                }
+
+            }
+
+            if ((allNum - nowNum) >= 1) {
+                var oA = document.createElement('a');
+                oA.href = '#' + (nowNum + 1);
+                oA.innerHTML = '下一页';
+                obj.appendChild(oA);
+            }
+
+            if ((allNum - nowNum) >= 3 && allNum >= 6) {
+
+                var oA = document.createElement('a');
+                oA.href = '#' + allNum;
+                oA.innerHTML = '尾页';
+                obj.appendChild(oA);
+
+            }
+
+            callBack(nowNum, allNum);
+
+            var aA = obj.getElementsByTagName('a');
+
+            for (var i = 0; i < aA.length; i++) {
+                aA[i].onclick = function() {
+
+                    var nowNum = parseInt(this.getAttribute('href').substring(1));
+
+                    obj.innerHTML = '';
+
+                    page({
+
+                        id: opt.id,
+                        nowNum: nowNum,
+                        allNum: allNum,
+                        callBack: callBack
+
+                    });
+
+                    return false;
+
+                };
+            }
+
+        }
+    </script>
+    <title>完美刀塔助手APP下载 - 完美官方出品</title>
+    <!-- 给下载框添加js -->
+    <script>
+        $(function() {
+            $("#btn_down_iphone,#btn_down_android,#btn_down_wp,#btn_down_wp10").hover(function() {
+                $(this).addClass('hover')
+            }, function() {
+                $(this).removeClass('hover')
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <!-- 右侧滚动栏 -->
+    <ul id="point_ul">
+        <li class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!-- 主页面 -->
+    <div id="box_h">
+        <div id="screen1" class="screen" scrollDown="#screen2">
+            <a href="#" target="_blank"><img class="logo" src="picture/logo.png" /></a>
+            <!-- 菜单 -->
+            <ul class="menu">
+                <li class="on">
+                    <a href="../index/index.html">首页</a>
+                </li>
+                <li>
+                    <a href="#">更新日志</a>
+                </li>
+            </ul>
+            <!-- 分享 -->
+            <div class="share_box">
+                <p>分享到：</p>
+                <img id="share_sina" src="picture/share_sina.png" /> <img id="share_qq" src="picture/share_qq.png" /> <img id="share_zone" src="picture/share_zone.png" /> <img id="share_baidu" src="picture/share_baidu.png" />
+            </div>
+            <!-- 下载部分 -->
+            <div class="s1_cont"><img src="picture/s1_img1_1504.png" height="330" />
+                <!-- APP下载 -->
+                <div class="btn_down_box mt1">
+                    <div id="btn_down_iphone">
+                        <a href="#" target="_blank"></a>
+
+                        <p>当前版本：V3.3.1<br> 软件大小：56.2MB
+                            <br> 更新日期：2016-7-20
+                            <br> 支持iOS7.0以上，适配iPad
+                        </p>
+                    </div>
+                    <div id="btn_down_android">
+                        <a href="#" target="_blank"></a>
+
+                        <p> 当前版本：V3.3.0<br> 软件大小：40.06MB
+                            <br> 更新日期：2016-7-19
+                            <br> 适用固件：Andorid2.3及以上版本固件
+                        </p>
+                    </div>
+                    <div id="btn_down_wp">
+                        <a href="#" target="_blank"></a>
+
+                        <p> 当前版本：V2.8.4<br> 软件大小：53.98MB
+                            <br> 更新日期：2016-4-29
+                            <br> 适用系统：Windows Phone 8.1</p>
+                    </div>
+                    <div id="btn_down_wp10">
+                        <a href="#" target="_blank"></a>
+
+                        <p> 当前版本：V2.8.5<br> 软件大小：59.1MB
+                            <br> 更新日期：2016-4-29
+                            <br> 适用系统：Windows 10</p>
+                    </div>
+                </div>
+                <!-- 二维码 -->
+                <div class="s1_ma">
+                    <p> 扫描二维码 自动免费下载<br> 点击下载按钮自动进入对应版本免费下载
+                        <br> 在应用商店搜索“完美刀塔助手”免费下载
+                        <br>
+                        <span>在手机浏览器访问“app.dota2.com.cn”，立即下载完美刀塔助手</span></p>
+                </div>
+            </div>
+            <!-- 箭头 -->
+            <img class="down_jt" next="1" src="picture/s_down.png" />
+        </div>
+        <div id="screen2" class="screen" scrollDown="#screen3" scrollUp="#screen1">
+            <img class="s_img" id="s2_1" src="picture/s2_img1_1504.png" />
+            <img class="s_img" id="s2_2" src="picture/s2_img2_1504.png" />
+            <img class="down_jt" next="2" src="picture/s_down.png" />
+        </div>
+        <div id="screen3" class="screen" scrollDown="#screen4" scrollUp="#screen2">
+            <img class="s_img" id="s3_1" src="picture/s3_img1_1504.png" />
+            <img class="s_img" id="s3_2" src="picture/s3_img2_1504.png" />
+            <img class="down_jt" next="3" src="picture/s_down.png" />
+        </div>
+        <div id="screen4" class="screen" scrollUp="#screen3">
+            <img class="s_img" id="s4_1" src="picture/s4_img1_1504.png" />
+            <img class="s_img" id="s4_2" src="picture/s4_img2_1504.png" />
+            <img id="down_jt_last" src="picture/s_down.png" />
+        </div>
+        <!-- 页尾弹出框 -->
+        <div id="botbar">
+            <div class="bot_down" href="#" target="_blank">
+                <ul id="ul1"></ul>
+                <div id="div1">
+                    <!--<a class="bot_down1" href="#" target="_blank"></a>-->
+                    <!--<a class="bot_down2" href="#" target="_blank"></a>-->
+                    <!--<a class="bot_down3" href="#" target="_blank"></a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--以下JS部分-->
+
+    <!--添加2个滚屏JS插件-->
+    <script type="text/javascript" src="js/jquery.scrollto-min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            //size  只在页面生成时候执行一次  之后改变页面就不会执行 所以要添加resize
+            var clientW = document.documentElement.clientWidth; //获得浏览器宽度
+            var clientH = document.documentElement.clientHeight; //获得浏览器高度
+            var webW = (clientW > 1190) ? clientW : 1190; //让宽度大于等于1190
+            var webH;
+            if (clientH <= 620) { //高度最小620
+                webH = 620;
+            } else if (clientH > 620 && clientH <= 980) { //在620和980之间就不变
+                webH = clientH;
+            } else {
+                webH = 980; //最大980
+            }
+            $('#box_h').css({
+                'width': webW + 'px',
+                'height': webH * 4 + 'px'
+            }); //设置大盒子的宽高
+            $('.screen').each(function() { //设置每个screen的高度和宽度
+                $(this).css({
+                    'width': webW + 'px',
+                    'height': webH + 'px'
+                }); //遍历每个div然后设置长宽
+            });
+            $(window).resize(function() { //调整窗口大小就执行函数来设置页面的最小高度和最小宽度
+                var clientW = document.documentElement.clientWidth;
+                var clientH = document.documentElement.clientHeight;
+                var webW = (clientW > 1190) ? clientW : 1190;
+                var webH;
+                if (clientH <= 620) {
+                    webH = 620;
+                } else if (clientH > 620 && clientH <= 980) {
+                    webH = clientH;
+                } else {
+                    webH = 980;
+                }
+                $('#box_h').css({
+                    'width': webW + 'px',
+                    'height': webH * 4 + 'px'
+                });
+                $('.screen').each(function() {
+                    $(this).css({
+                        'width': webW + 'px',
+                        'height': webH + 'px'
+                    });
+                });
+            });
+            $('#botbar').css({
+                'width': webW + 'px',
+                'bottom': '-298px'
+            }); //设置底下的宽高
+            if (webH <= 768) { //如果高度小于768 就重新设置
+                $('.logo').css({
+                    'left': '40px',
+                    'top': '10%',
+                    'width': '300px'
+                }); //标题
+                $('.s1_cont').css('bottom', '4%'); //页面主要文本 底部浮动
+                $('.mt1').css('margin-top', '0'); //手机下载 margin-top
+                $('#s2_1').css({
+                    'top': '10%',
+                    'width': '400px'
+                }); //上部分文字
+                $('#s3_1').css({
+                    'top': '10%',
+                    'width': '400px'
+                }); //上部分文字
+                $('#s4_1').css({
+                    'top': '10%',
+                    'width': '400px'
+                }); //上部分文字
+                $('#s2_2').css({
+                    'width': '500px'
+                }); //下部分文字
+                $('#s3_2').css({
+                    'width': '500px'
+                }); //上部分文字
+                $('#s4_2').css({
+                    'width': '500px'
+                }); //上部分文字
+            }
+            //scroll-shu
+            var divBtn = {
+                '#screen1': 0,
+                '#screen2': 1,
+                '#screen3': 2,
+                '#screen4': 3
+            };
+            //找到每个页面的需要动画的图片
+            var $img2_1 = $('#screen2').find('.s_img').eq(0), //id叫screen2里的类名叫s_img的第一个元素
+                $img2_2 = $('#screen2').find('.s_img').eq(1),
+                $img3_1 = $('#screen3').find('.s_img').eq(0),
+                $img3_2 = $('#screen3').find('.s_img').eq(1),
+                $img4_1 = $('#screen4').find('.s_img').eq(0),
+                $img4_2 = $('#screen4').find('.s_img').eq(1);
+
+
+            //给每个页面的2张图片添加动画 一旦执行事件就执行这些函数
+            function showZi2() {
+                $img2_1.show().animate({
+                    'left': '538px'
+                }, 500, function() { //上图
+                    $img2_2.show().animate({
+                        'left': '538px'
+                    }, 200); //下图
+                });
+            }
+
+            function hideZi2() {
+                $img2_1.animate({
+                    'left': '0px'
+                }, 300, function() {
+                    $(this).hide();
+                });
+                $img2_2.animate({
+                    'left': '1000px'
+                }, 300, function() {
+                    $(this).hide();
+                });
+            }
+
+            function showZi3() {
+                $img3_1.show().animate({
+                    'left': '538px'
+                }, 500, function() {
+                    $img3_2.show().animate({
+                        'left': '538px'
+                    }, 200);
+                });
+            }
+
+            function hideZi3() {
+                $img3_1.animate({
+                    'left': '0px'
+                }, 300, function() {
+                    $(this).hide();
+                });
+                $img3_2.animate({
+                    'left': '1000px'
+                }, 300, function() {
+                    $(this).hide();
+                });
+            }
+
+            function showZi4() {
+                $img4_1.show().animate({
+                    'left': '538px'
+                }, 500, function() {
+                    $img4_2.show().animate({
+                        'left': '538px'
+                    }, 200);
+                });
+            }
+
+            function hideZi4() {
+                $img4_1.animate({
+                    'left': '0px'
+                }, 300, function() {
+                    $(this).hide();
+                });
+                $img4_2.animate({
+                    'left': '1000px'
+                }, 300, function() {
+                    $(this).hide();
+                });
+            }
+
+
+            //添加页面跳转的函数 函数中包括页面中的文字动画 以及侧边栏的颜色
+            function showScreenN(n) {
+                //底部的动作
+                $('#botbar').css('bottom', '-298px'); //把底部隐藏 无动画
+                //侧边栏的动作
+                $('#point_ul li').removeClass('on'); //去除on的css
+                $('#point_ul li').eq(n).addClass('on'); //添加on的css
+                //实现滚动页面的效果  页面的div和速度
+                $.scrollTo('#screen' + (n + 1), 500); //滚动到那个屏幕
+                //页面内部动画
+                if (n == 0) { //切第一张
+                    hideZi2();
+                    hideZi3();
+                    hideZi4();
+                }
+                if (n == 1) { //切第二张
+                    showZi2();
+                    hideZi3();
+                    hideZi4();
+                }
+                if (n == 2) { //切第三张
+                    showZi3();
+                    hideZi2();
+                    hideZi4();
+                }
+                if (n == 3) { //切第四张
+                    showZi4();
+                    hideZi2();
+                    hideZi3();
+                }
+            }
+
+            var scrollFlag = false; //滚动开关
+            $('.screen').each(function(i) { //i指的是索引
+                $(this).mousewheel(function(event, delta) {
+                    //			event.preventDefault();
+                    if (scrollFlag) { //滚动的时候 停止函数执行
+                        return false;
+                    }
+                    var scrollDown = $(this).attr('scrollDown'), //把这个页面下个页面的id给变量
+                        scrollUp = $(this).attr('scrollUp'); //把这个页面上个页面的id给变量
+
+                    if (delta < 0) { //往上滚
+                        if (scrollDown) { //如果有scrollDown这个属性
+                            scrollFlag = true; //开启开关
+                            $.scrollTo(scrollDown, 500, function() { //滚到id为变量的这个div
+                                scrollFlag = false //滚动完关闭开关
+                            });
+                            showScreenN(divBtn[scrollDown]); //执行页面的图片动画 之前定义了一个对象 键值对为 变量名和索引
+                        }
+                        if ($(this).attr('id') == 'screen4') {
+                            //					$('#botbar').stop().animate({'bottom':'0px'},500);
+                            $('#botbar').animate({
+                                'bottom': '0px'
+                            }, 500);
+                        }
+                    }
+                    if (delta > 0) { //往下滚
+                        if (scrollUp) {
+                            scrollFlag = true;
+                            $.scrollTo(scrollUp, 500, function() {
+                                scrollFlag = false
+                            });
+                            showScreenN(divBtn[scrollUp]);
+                        }
+                    }
+                });
+            });
+
+
+            //scrollTo
+
+            //侧边栏添加click事件
+            $('#point_ul li').each(function(i) { //给侧边栏添加点击事件
+                $(this).click(function() {
+                    console.log(i); //i指的是each里面每个元素的索引
+                    showScreenN(i);
+                });
+            });
+
+            //底部箭头添加事件
+            $('.down_jt').each(function() { //给每个箭头添加事件
+                $(this).click(function() { //箭头点击事件
+                    var showNum = parseInt($(this).attr('next')); //获得点击时候的箭头的next属性 获得的是个字符串 改成数字
+                    console.log(showNum); //screen的索引
+                    showScreenN(showNum);
+                });
+            });
+
+            //最后一个箭头的事件
+            $('#down_jt_last').click(function() { //给最后箭头添加事件
+                //		$('#botbar').stop().animate({'bottom':'0px'},500);//停止任何动画 执行新的动画
+                $('#botbar').animate({
+                    'bottom': '0px'
+                }, 500); //停止任何动画 执行新的动画
+            });
+
+        });
+    </script>
+</body>
+
+</html>
